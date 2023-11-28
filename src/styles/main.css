@@ -1,0 +1,343 @@
+html {
+    font-size: 10px;
+}
+
+.container {
+    width: 100vw;
+    height: 100vh;
+    min-width: 320px;
+    background-color: #aeb1ad;
+    display: grid;
+    grid-template-rows: 7rem 7rem 1fr;
+    align-items: center;
+    justify-items: center;
+    text-align: center;
+}
+
+.container>h2 {
+    width: 100%;
+    background-color: #278315;
+    font-size: 2.5rem;
+    line-height: 7rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5rem;
+    color: #f4f4f4;
+    text-shadow: 1px 2px 3px rgba(86, 122, 220, 0.9);
+    box-shadow: 1px 1px 5px #030a16;
+}
+
+.container .menu {
+    width: 100%;
+    height: 100%;
+    background-color: #f5d311;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    font-size: 1.2rem;
+    box-shadow:  1px 0px 5px #051b4170;
+}
+
+.menu .menu-score,
+.menu .menu-attempts {
+    width: 100%;
+    padding: 1rem;
+    color: rgba(18, 18, 162, 0.781);
+    letter-spacing: 0.2rem;
+}
+
+.menu-score #score,
+.menu-attempts #attempts {
+    margin: 0.5rem 1rem;
+    background: linear-gradient(#d3f9c8, #fff, #d3f9c8);
+    border: 1px solid rgb(209, 209, 209);
+    border-radius: 2rem;
+    font-size: 2rem;
+    text-shadow: none;
+    line-height: 3rem;
+    color: #363535;
+}
+
+.container .panel-container {
+    width: 100%;
+    height: 100%;
+    min-height: 500px;
+    max-height: 100%;
+    background-color: rgba(15, 15, 151, 0.7);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.panel-container .adjust-container {
+    width: auto;
+    height: calc(100% - 100px);
+    min-width: 300px;
+    max-width: 60vmin;
+    min-height: 300px;
+    max-height: 60vmin;
+    aspect-ratio: 1 / 1;
+    margin: 1rem auto;
+}
+
+.panel-container .cards-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: space-between;
+    justify-content: space-between;
+}
+
+.cards-container .card {
+    width: 24%;
+    height: 24%;
+    background-color: #f4f4f4;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    font-size: 4rem;
+    transform: rotateY(180deg);
+    transition: 0.25s;
+    border-radius: 0.5rem;
+    box-shadow:  1px 2px 2px #0c0b11
+}
+
+.cards-container .card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #2a2929;
+    transition: 0.25s;
+    transform: rotateY(0deg);
+    border-radius: 0.5rem;
+    backface-visibility: hidden;
+}
+
+.cards-container .card.cardOpened {
+    transform: rotateY(0deg);
+}
+
+.cards-container .card.cardOpened::after {
+    transform: rotateY(180deg);
+}
+
+.cards-container .card.cardMatches {
+    background-color: #adff2f;
+}
+
+.panel-container .panel-control {
+    width: 100%;
+    min-height: 120px;
+    background-color: #0e0e0e41;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-size: 2rem;
+}
+
+.panel-control #message {
+    min-height: 40px;
+    display: flex;
+    align-items: center;
+    font-size: 3.5rem;
+    font-weight: bolder;
+    letter-spacing: 0.2rem;
+    color: #85f70b;
+    text-transform: uppercase;
+    text-shadow: 1px 1px 2px #0d0d0c;
+}
+
+.panel-control .buttons {
+    width: 100%;
+    min-height: 50px;
+    padding: 1.5rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.buttons .start,
+.buttons .reset {
+    min-width: 125px;
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 900;
+    letter-spacing: 0.2rem;
+    box-shadow:  1px 1px 5px rgba(5, 28, 66, 0.5);
+    border-radius: 0.5rem;
+    border: none;
+}
+
+.buttons .reset:active,
+.buttons .start:active {
+    background-color: #262809;
+    color: #f4f4f4;
+}
+
+.hide {
+    display: none;
+}
+
+@media screen and (min-width: 640px) {
+    
+    .container {
+        height: 100vh;
+        min-width: 640px;
+        min-height: 320px;
+        grid-template-rows: none;
+        grid-template-columns: 15% 1fr;
+    }
+    
+    .container>h2 {
+        display: none;
+    }
+    
+    .container .menu {
+        flex-direction: column;
+    }
+
+    .menu-score, .menu-attempts {
+        font-size: 1.5rem;
+    }
+
+    .menu-score #score,
+    .menu-attempts #attempts {
+        height: 5rem;
+        line-height: 5rem;
+        font-size: 2.5rem;
+    }
+   
+    .container .panel-container {
+        min-height: auto;
+        flex-direction: row;
+    }
+    
+    .panel-container .adjust-container {
+        width: calc(100vw - 100px);    
+        height: auto;
+        max-width: 65vmin;
+        max-height: 65vmin;
+        margin: 0 1rem;
+    }
+    
+    .panel-container .panel-control {
+        width: 30%;
+        height: 100%;
+        min-width: 170px;
+        min-height: 300px;
+        margin: 0 1rem 0 0;
+    }
+    
+    .panel-control #message {
+        height: 76px;
+        padding: 0 2rem;
+    }
+    
+    .panel-control .buttons {
+        padding: 1.5rem 0;
+        margin: 4rem 0 0 0;
+    }
+    
+}
+
+@media screen and (min-width: 640px) and (min-height: 440px) {
+
+    .container {
+        max-width: 100vw;
+        height: 100vh;    
+        align-items: normal;
+        justify-content: unset;
+        grid-template-rows: 10rem 1fr;
+    }
+    
+    .container>h2 {
+        display: block;
+        grid-column-start: 1;
+        grid-column-end: 3;
+        line-height: 10rem;
+        font-size: 4rem;
+        box-shadow: 1px 1px 5px #030a16;
+        z-index: 1;
+    }
+
+    .container .menu {
+        grid-row-start: 2;
+        grid-row-end: 3;
+    }
+
+    .container .panel-container {
+        min-height: auto;
+        margin: 0;
+    }
+
+    .panel-control #message {
+        font-size: 4rem;
+    }
+    
+    .panel-container .adjust-container {
+        width: calc(100vw - 30%);    
+        max-width: 75vmin;
+        max-height: 75vmin;
+    }
+    
+}
+
+@media screen and (min-height: 480px) and (min-width: 640px){
+
+    .menu-score #score,
+    .menu-attempts #attempts {
+        height: 7rem;
+        line-height: 7rem;
+        font-size: 2.5rem;
+    }
+
+    .cards-container .card {
+        font-size: 6rem;
+    }
+
+}
+
+@media screen and (min-height: 680px) and (min-width: 860px){
+
+    .cards-container .card {
+        font-size: 8rem;
+    }
+
+}
+
+@media screen and (min-width: 780px){
+
+    .menu .menu-score, .menu .menu-attempts {
+        font-size: 1.8rem;
+    }
+    .menu-score #score, .menu-attempts #attempts {
+        font-size: 3rem;
+    }
+
+}
+
+@media screen and (min-width: 1140px) {
+
+    .panel-control #message {
+        font-size: 5rem;
+    }
+
+    .panel-control .buttons {
+        width: 100%;
+        min-height: 50px;
+        padding: 1.5rem 0;
+        display: flex;
+        justify-content: center;
+    }
+
+    .buttons .start,
+    .buttons .reset {
+        min-width: 180px;
+        padding: 2rem;
+        font-size: 2.5rem;
+    }
+
+}
