@@ -1,7 +1,7 @@
 # Projeto Memory Game
 O clássico jogo da memória desenvolvido em HTML, CSS e Javascript.
 
-Link do jogo: [clique aqui]().
+Link do jogo: [clique aqui](https://kmkery.github.io/jogo-da-memoria/).
 
 ## O jogo
 
