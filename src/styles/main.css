@@ -308,36 +308,17 @@ html {
 
 }
 
-@media screen and (min-width: 780px){
-
-    .menu .menu-score, .menu .menu-attempts {
-        font-size: 1.8rem;
-    }
-    .menu-score #score, .menu-attempts #attempts {
-        font-size: 3rem;
-    }
-
-}
-
 @media screen and (min-width: 1140px) {
 
     .panel-control #message {
         font-size: 5rem;
     }
 
-    .panel-control .buttons {
-        width: 100%;
-        min-height: 50px;
-        padding: 1.5rem 0;
-        display: flex;
-        justify-content: center;
-    }
-
     .buttons .start,
     .buttons .reset {
-        min-width: 180px;
+        min-width: 150px;
         padding: 2rem;
-        font-size: 2.5rem;
+        font-size: 2.2rem;
     }
 
 }
